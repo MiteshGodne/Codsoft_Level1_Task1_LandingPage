@@ -1,0 +1,738 @@
+/* CSS */
+* {
+    margin: 0;
+    font-family: "Ysabeau Infant", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* CSS for buttons */
+.btn {
+    background-color: #297bb6;
+    width: fit-content;
+    color: rgb(255, 255, 255);
+    padding: 0.6vw 1.6vw;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    color: #000000;
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+}
+
+/* CSS for Header  */
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-around;
+    background-color: #297bb6;
+    color: white;
+    border: none;
+    padding: 0.95rem;
+    height: 4vw;
+    max-width: 100vw;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-heading {
+    padding-left: 1vw;
+    font-size: 1.6vw;
+}
+
+.left img {
+    box-shadow: 5px 5px 5px rgb(34, 34, 34);
+    height: 4vw;
+    width: 4vw;
+}
+
+.left:hover {
+    transform: scale(1.1);
+    transition: 1s ease-in-out;
+}
+
+.mid {
+    display: flex;
+}
+
+.mid a {
+    cursor: pointer;
+    font-size: 1.2vw;
+    color: rgb(255, 255, 255);
+    padding: 0 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 2px solid #297bb6;
+}
+
+.mid a:hover {
+    transition-duration: 1s;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+#emp-list {
+    display: none;
+    position: inherit;
+    width: 13vw;
+    background-color: #ffffff;
+    border-radius: 0.2vw;
+    padding: 0.5vw 0;
+    text-align: left;
+}
+
+#emp-list a,
+#resources-list a {
+    color: #000000;
+    margin: 1vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+#emp-list a:hover,
+#resources-list a:hover {
+    background-color: #b7cad8;
+}
+
+#emp-sol-list:hover~#emp-list,
+#emp-list:hover,
+#resources-anchor:hover~#resources-list,
+#resources-list:hover {
+    display: block;
+    position: absolute;
+    transition: all 1s 1s;
+}
+
+#resources-list {
+    display: none;
+    position: inherit;
+    width: 14vw;
+    background-color: #ffffff;
+    border-radius: 0.2vw;
+    padding: 0.5vw 0;
+}
+
+.right {
+    text-decoration: none;
+    display: flex;
+    font-weight: 250;
+    align-items: center;
+}
+
+.right-btns {
+    font-size: 1.1vw;
+    border: 0.1em solid white;
+    border-radius: 0.3em;
+    margin: 5px;
+}
+
+.hidden-bar {
+    display: none;
+}
+
+.hidden-bar-btn {
+    display: none;
+}
+
+.hr {
+    margin-top: 6.5vw;
+    visibility: hidden;
+}
+
+/* CSS For Main */
+main {
+    max-width: 100vw;
+    background-color: #c1ced538;
+    background-size: cover;
+}
+
+.chat {
+    background-color: #297bb6;
+    border-radius: 50%;
+    width: 7vh;
+    font-size: 3.5vh;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    box-shadow: 5px 5px 5px #454343;
+    cursor: pointer;
+}
+
+
+/*CSS for Intro Section */
+.about {
+    padding: 0 10vw;
+    height: 90vh;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #297bb6; */
+    background-image: url("wave.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.intro {
+    padding: 10px;
+    border: 1px gray;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.demo-btn {
+    border: 2px solid rgb(59, 129, 172);
+    border-radius: 0.5vh;
+    padding: 0.6rem 1.6rem;
+    z-index: 0;
+}
+
+.img-section {
+    display: flex;
+    justify-content: center;
+}
+
+.img-section img {
+    width: 40vw;
+
+}
+
+@keyframes theme {
+    from {
+        color: #297bb6;
+    }
+
+    to {
+        color: black;
+        text-shadow: 2px 2px 2px #8b8c8d;
+    }
+}
+
+.soft-heading {
+    padding: 1vw 0;
+    font-weight: 500;
+    font-size: 2vw;
+    animation: theme 3s 0.5s ease-in-out infinite;
+}
+
+.hard-heading {
+    padding: 1vw 0;
+    font-size: 3vw;
+    animation: theme 3s 0.5s ease-in-out infinite;
+}
+
+/* CSS for Benefits Section */
+.benefit-section {
+    padding: 5vw 10vw;
+    height: 75vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom left, white, #0067b07c, white);
+}
+
+.benefit-img img {
+    height: 20vw;
+    box-shadow: 10px 10px 10px #00000042;
+}
+
+.benefit-img img:hover,
+.img-section img:hover,
+.card:hover,
+.recruiter-section img:hover,
+.chat:hover {
+    transition: all 0.5s 0s ease-in-out;
+    transform: scale(1.1);
+}
+
+#benefit-heading {
+    text-align: center;
+    font-size: 3vw;
+}
+
+.benefit-section ul li {
+    display: block;
+    justify-content: center;
+    text-align: left;
+    list-style-type: none;
+    margin: 20px;
+    padding: 0.5vw;
+    border-radius: 0.5vh;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.benefit-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/*  CSS for Workable Section */
+.workables {
+    padding: 5vw 10vw;
+    height: 135vh;
+    max-width: 100vw;
+    background-image: linear-gradient(to bottom right, white, #0067b07c, white);
+}
+
+#benefit-heading,
+#workable-heading,
+#recruiter-heading,
+#connect-heading {
+    animation: theme 3s 0.5s ease-in-out infinite;
+    margin: 0 auto;
+    text-align: center;
+    width: 50vw;
+    font-size: 2.3vw;
+    font-weight: 700;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    margin: 2vw;
+    width: 15vw;
+    background-color: white;
+    padding: 0 1vw 2vw 1vw;
+    border-radius: 1vh;
+}
+
+.card img {
+    height: 13vw;
+}
+
+.h3 {
+    color: rgb(92, 92, 92);
+    font-size: 0.7vw;
+    font-weight: 900;
+}
+
+.h5 {
+    font-size: 1vw;
+    font-weight: 600;
+}
+
+.work-para {
+    font-size: 0.8vw;
+    padding: 0.5vw 0;
+}
+
+.card a {
+    text-decoration: none;
+    color: #297bb6;
+    font-weight: 600;
+}
+
+.content a:hover {
+    color: #0b5286;
+}
+
+/* Recruiter section */
+.recruiter-section,
+.connect-section {
+    max-height: 100vw;
+    padding: 5vw 10vw;
+    background-image: linear-gradient(to bottom left, white, #0067b07c, white);
+    text-align: center;
+}
+
+.recruiter-para,
+.connect-para {
+    padding: 3vw;
+    font-size: 1.5vw;
+}
+
+.recruiter-section img {
+    border-radius: 1vh;
+    width: 70vw;
+}
+
+.recruiter-section img:hover,
+.card:hover,
+.benefit-img img:hover,
+.connect-section img:hover {
+    transition: 0.5s ease-out;
+    border-radius: 2vh;
+    box-shadow: 10px 10px 10px #00000042;
+}
+
+.recruiter-section img {
+    border-radius: 2vh;
+    mix-blend-mode: multiply;
+}
+
+/* connect section  */
+.connect-section {
+    background-image: linear-gradient(to bottom right, white, #0067b07c, white);
+}
+
+.connect-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 2vw 0;
+}
+
+.connect-box input {
+    padding: 0.5vw;
+    margin: 1vw;
+    border: 0.1vw solid white;
+    border-radius: 0.2vw;
+}
+
+.connect-box button {
+    padding: 0.5vw;
+    border-radius: 0.2vw;
+    margin: 1vw;
+    border: none;
+    z-index: 0;
+    background-color: #297bb6;
+}
+
+/* Footer  */
+footer {
+    padding-top: 1.5vw;
+    text-align: center;
+    height: 25vw;
+    font-weight: 600;
+    background-color: #297bb6;
+}
+
+.goTop {
+    border-color: white;
+    border-radius: 0.2vw;
+    font-size: 1vw;
+}
+
+.goTop a {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+.footer-boxes {
+    margin: 2vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-boxes a {
+    font-size: 1.1vw;
+    padding: 1vw 0;
+    text-decoration: none;
+    color: rgb(45, 44, 44);
+    font-weight: 300;
+}
+.footer-boxes a:hover {
+    font-weight:600;
+    cursor: alias;
+}
+
+.footer-boxes p {
+    padding: 0.5vw 0;
+    font-size: 1.5vw;
+}
+
+#copyright-foot {
+    padding-top: 1vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#copyright-foot div {
+    font-size: 1vw;
+}
+
+.box {
+    display: none;
+}
+
+/* Media Queries for Smaller Screens */
+
+@media (max-width:1000px) and (min-width:600px) {
+    .hr {
+        margin-top: 8.5vw;
+        visibility: hidden;
+    }
+
+    .about {
+        height: 70vh;
+        padding: 0 5vw;
+    }
+
+    .soft-heading {
+        font-size: 2vh;
+    }
+
+    .hard-heading {
+        font-size: 2.5vh;
+    }
+
+    .para {
+        font-size: 2vh;
+    }
+
+    .demo-btn {
+        font-size: 2vh;
+    }
+
+    .benefit-section ul li {
+        font-size: 1.5vh;
+    }
+
+    .workables {
+        padding: 5vw;
+        height: 95vh;
+    }
+
+    .card {
+        width: 20vw;
+    }
+
+    .card a {
+        font-size: 1vw;
+    }
+
+    .content p {
+        font-size: 1.2vw;
+    }
+
+    footer {
+        height: 35vh;
+    }
+}
+
+/* Media Queries for Mobile Screens */
+
+@media (max-width:600px) {
+    .header {
+        padding: 2vh;
+        justify-content: space-between;
+    }
+
+    .logo-heading {
+        font-size: 1.4vh;
+    }
+
+    p {
+        margin: 1em 0;
+    }
+
+    .hr {
+        padding-top: 3vh;
+        visibility: hidden;
+    }
+
+    .chat {
+        width: 4vh;
+        font-size: 2vh;
+        height: 4vh;
+    }
+
+    .hidden-bar {
+        padding: 0 1.5vh;
+        display: block;
+        height: 2vh;
+        width: 1rem;
+        background: none;
+        border: none;
+        font-size: 0.5rem;
+    }
+
+    .about {
+        min-height: 70vh;
+    }
+
+    .soft-heading {
+        font-size: 2vh;
+        font-weight: 400;
+        margin: 1vh;
+    }
+
+    .hard-heading {
+        font-size: 2.5vh;
+        margin: 1vh;
+    }
+
+    .para {
+        font-size: 2vh;
+    }
+
+    .demo-btn {
+        padding: 0.5vh;
+        border: 0.1vh solid white;
+        font-size: 1.5vh;
+    }
+
+    .about {
+        display: block;
+        padding-top: 3vh;
+        text-align: center;
+        max-height: 50vh;
+    }
+
+    .mid {
+        display: none;
+    }
+
+    .right-btns {
+        border: 0.15em solid white;
+        font-size: 1.4vh;
+    }
+
+    .img-section img {
+        height: 20vh;
+        width: 35vh;
+    }
+
+    .benefit-section {
+        display: block;
+        text-align: center;
+        height: 55vh;
+    }
+
+    .benefit-section ul {
+        padding: 0;
+    }
+
+    #benefit-heading {
+        font-size: 2vh;
+    }
+
+    .benefit-section img {
+        max-height: 15vh;
+    }
+
+    .benefit-section ul li {
+        font-size: 1.4vh;
+    }
+
+    /* Workables  */
+    .workables {
+        height: 135vh;
+    }
+
+    #workable-heading,
+    #recruiter-heading,
+    #connect-heading {
+        font-size: 2vh;
+        font-weight: 800;
+    }
+
+    .cards {
+        display: block;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vh;
+        margin: 1.5vh auto;
+        padding: 1vh;
+    }
+
+    .card img {
+        height: 10vh;
+    }
+
+    .card a {
+        font-size: 1vh;
+    }
+
+    .h3 {
+        font-size: 1vh;
+    }
+
+    .h5 {
+        font-size: 1.2vh;
+        margin: 0.4vh;
+    }
+
+    .work-para {
+        font-size: 1.3vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .recruiter-para,
+    .connect-para {
+        font-size: 1.5vh;
+    }
+
+    .connect-section img {
+        width: 15vh;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+        display: none;
+    }
+
+    .box {
+        display: flex;
+    }
+
+    .box p {
+        font-size: 1.2vh;
+    }
+
+    .connect-box input,
+    .connect-box button {
+        font-size: 1.5vh;
+    }
+
+    #copyright-foot div {
+        padding-top: 1vh;
+        font-size: 1vh;
+    }
+
+    footer {
+        height: 14vh;
+    }
+}
